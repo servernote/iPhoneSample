@@ -18,7 +18,7 @@ struct ContentViewFadeIn: View {
             Text("Hello, world!")
         }
         .onAppear() {
-            withAnimation(Animation.easeOut(duration:5)) {
+            withAnimation(Animation.easeIn(duration:5)) {
             //    .repeatForever(autoreverses: true)) {
                     fadeInOut.toggle()
                 }
