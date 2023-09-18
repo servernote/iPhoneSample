@@ -14,6 +14,7 @@
 		02E149582AB7CE4600BB26C6 /* ContentViewFadeInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E149572AB7CE4600BB26C6 /* ContentViewFadeInOut.swift */; };
 		02E1495A2AB7CE9000BB26C6 /* ContentViewFadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E149592AB7CE9000BB26C6 /* ContentViewFadeIn.swift */; };
 		02E1495C2AB7CEF900BB26C6 /* ContentViewFadeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E1495B2AB7CEF900BB26C6 /* ContentViewFadeOut.swift */; };
+		02E1495E2AB7E1AE00BB26C6 /* ContentViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E1495D2AB7E1AE00BB26C6 /* ContentViewButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		02E149572AB7CE4600BB26C6 /* ContentViewFadeInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewFadeInOut.swift; sourceTree = "<group>"; };
 		02E149592AB7CE9000BB26C6 /* ContentViewFadeIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewFadeIn.swift; sourceTree = "<group>"; };
 		02E1495B2AB7CEF900BB26C6 /* ContentViewFadeOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewFadeOut.swift; sourceTree = "<group>"; };
+		02E1495D2AB7E1AE00BB26C6 /* ContentViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				02E149452AB697A000BB26C6 /* MyUITestApp.swift */,
 				02E149472AB697A000BB26C6 /* ContentView.swift */,
+				02E1495D2AB7E1AE00BB26C6 /* ContentViewButtons.swift */,
 				02E149572AB7CE4600BB26C6 /* ContentViewFadeInOut.swift */,
 				02E149592AB7CE9000BB26C6 /* ContentViewFadeIn.swift */,
 				02E1495B2AB7CEF900BB26C6 /* ContentViewFadeOut.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				02E149482AB697A000BB26C6 /* ContentView.swift in Sources */,
 				02E1495C2AB7CEF900BB26C6 /* ContentViewFadeOut.swift in Sources */,
+				02E1495E2AB7E1AE00BB26C6 /* ContentViewButtons.swift in Sources */,
 				02E149582AB7CE4600BB26C6 /* ContentViewFadeInOut.swift in Sources */,
 				02E149462AB697A000BB26C6 /* MyUITestApp.swift in Sources */,
 				02E1495A2AB7CE9000BB26C6 /* ContentViewFadeIn.swift in Sources */,
