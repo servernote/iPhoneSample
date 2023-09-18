@@ -1,14 +1,14 @@
 //
 //  ContentViewFadeInOut.swift
-//  SpecTest
+//  MyUITest
 //
-//  Created by ServerNote.NET on 2023/09/17.
+//  Created by ServerNote.NET on 2023/09/18.
 //
 
 import SwiftUI
 
 struct ContentViewFadeInOut: View {
-    @State private var fadeInOut = false
+    @State private var fadeInOut = true
     
     var body: some View {
         VStack {
@@ -18,11 +18,17 @@ struct ContentViewFadeInOut: View {
             Text("Hello, world!")
         }
         .onAppear() {
-            withAnimation(Animation.easeInOut(duration:0.6)
+            withAnimation(Animation.linear(duration:0.5)
                 .repeatForever(autoreverses: true)) {
                     fadeInOut.toggle()
                 }
         }.opacity(fadeInOut ? 0:1)
         .padding()
+    }
+}
+
+struct ContentViewFadeInOut_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentViewFadeInOut()
     }
 }

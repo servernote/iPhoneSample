@@ -1,8 +1,8 @@
 //
 //  ContentViewFadeIn.swift
-//  SpecTest
+//  MyUITest
 //
-//  Created by ServerNote.NET on 2023/09/17.
+//  Created by ServerNote.NET on 2023/09/18.
 //
 
 import SwiftUI
@@ -24,5 +24,11 @@ struct ContentViewFadeIn: View {
                 }
         }.opacity(fadeInOut ? 0:1)
         .padding()
+    }
+}
+
+struct ContentViewFadeIn_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentViewFadeIn()
     }
 }
