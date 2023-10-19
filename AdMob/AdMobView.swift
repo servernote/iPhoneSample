@@ -25,10 +25,11 @@ struct AdMobBannerView : UIViewControllerRepresentable {
 
 class AdMobScreenView: NSObject, ObservableObject, GADFullScreenContentDelegate {
     
-    @Published var adLoaded:Bool = false
+    static var shared = AdMobScreenView()
     var adObject:GADInterstitialAd?
     
     override init() {
+        adObject = nil
         super.init()
     }
     
@@ -36,32 +37,23 @@ class AdMobScreenView: NSObject, ObservableObject, GADFullScreenContentDelegate 
         GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest()) { (ad, error) in
             if let _ = error {
                 print("AdMobScreenView.loadAdObject error=\(error!)")
-                self.adLoaded = false
                 return
             }
             print("AdMobScreenView.loadAdObject success")
-            self.adLoaded = true
             self.adObject = ad
             self.adObject?.fullScreenContentDelegate = self
         }
     }
     
     func showAdObject() {
+        self.loadAdObject()
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let root = windowScene?.windows.first!.rootViewController
-        if let ad = self.adObject {
-            ad.present(fromRootViewController: root!)
-            self.adLoaded = false
-        } else {
-            print("AdMobScreenView.showAdObject error")
-            self.adLoaded = false
-            self.loadAdObject()
-        }
+        self.adObject?.present(fromRootViewController: root!)
     }
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("AdMobScreenView.didFailToPresentFullScreenContentWithError")
-        self.loadAdObject()
     }
     
     func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
@@ -75,7 +67,7 @@ class AdMobScreenView: NSObject, ObservableObject, GADFullScreenContentDelegate 
 
 struct AdMobView: View {
     
-    @ObservedObject var adScreen = AdMobScreenView()
+    @ObservedObject var adScreen = AdMobScreenView.shared
     
     var body: some View {
         VStack() {
